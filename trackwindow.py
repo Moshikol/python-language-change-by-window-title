@@ -1,19 +1,5 @@
-"""Log window focus and appearance.
-
-Written to try to debug some window popping up and stealing focus from my
-Spelunky game for a split second.
-
-Developed with 32-bit python on Windows 7. Might work in other environments,
-but some of these APIs might not exist before Vista.
-
-Much credit to Eric Blade for this:
-https://mail.python.org/pipermail/python-win32/2009-July/009381.html
-and David Heffernan:
-http://stackoverflow.com/a/15898768/9585
-"""
 
 # using pywin32 for constants and ctypes for everything else seems a little
-# indecisive, but whatevs.
 import win32con
 import win32gui
 import win32api
@@ -143,10 +129,10 @@ def set_keyboard_layout():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(-264436723)  # to switch to Heb
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
     elif 'visual studio code' in window_title.lower():
-        py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to Heb
+        py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
     elif 'chrome' in window_title.lower():
-        py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to Heb
+        py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
 
  
