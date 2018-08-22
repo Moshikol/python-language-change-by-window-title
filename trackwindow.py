@@ -132,7 +132,7 @@ def getProcessFilename(processID):
 def callback(hWinEventHook, event, hwnd, idObject, idChild, dwEventThread,
              dwmsEventTime):
     set_keyboard_layout()
-    lastTime = dwmsEventTime
+    # lastTime = dwmsEventTime
 
 
 def set_keyboard_layout():
@@ -149,7 +149,7 @@ def set_keyboard_layout():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to Heb
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
 
-
+ 
 def setHook(WinEventProc, eventType):
     return user32.SetWinEventHook(
         eventType,
