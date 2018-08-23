@@ -151,7 +151,7 @@ def setHook(WinEventProc, eventType):
     )
 
 
-def main():
+def track_window():
     ole32.CoInitialize(0)
 
     WinEventProc = WinEventProcType(callback)
@@ -172,5 +172,4 @@ def main():
     ole32.CoUninitialize()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
