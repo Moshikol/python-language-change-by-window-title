@@ -137,6 +137,9 @@ def set_keyboard_layout():
     elif 'gitkraken' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+    elif 'cmd' in window_title.lower():
+        py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
+        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
 
 
 def setHook(WinEventProc, eventType):
