@@ -128,6 +128,9 @@ def set_keyboard_layout():
     if 'whatsapp' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(-264436723)  # to switch to Heb
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+    if any("\u0590" <= c <= "\u05EA" for c in window_title):
+        py_win_keyboard_layout.change_foreground_window_keyboard_layout(-264436723)  # to switch to Heb
+        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
     elif 'visual studio code' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
@@ -138,6 +141,9 @@ def set_keyboard_layout():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
     elif 'cmd' in window_title.lower():
+        py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
+        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+    elif 'ssh' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
         print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
 
