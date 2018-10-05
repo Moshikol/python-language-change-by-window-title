@@ -124,28 +124,29 @@ def callback(hWinEventHook, event, hwnd, idObject, idChild, dwEventThread,
 def set_keyboard_layout():
     w = win32gui
     window_title = w.GetWindowText(w.GetForegroundWindow())
-    print(window_title)
+    print("Title: " + window_title)
     if 'whatsapp' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(-264436723)  # to switch to Heb
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
-    if any("\u0590" <= c <= "\u05EA" for c in window_title):
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " Hebrew, whatsapp")
+    elif any("\u0590" <= c <= "\u05EA" for c in window_title):
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(-264436723)  # to switch to Heb
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " Hebrew, heb")
     elif 'visual studio code' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " English, vsc")
     elif 'chrome' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " English, chrome")
     elif 'gitkraken' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " English, git")
     elif 'cmd' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " English, cmd")
+
     elif 'ssh' in window_title.lower():
         py_win_keyboard_layout.change_foreground_window_keyboard_layout(67699721)  # to switch to en
-        print("Keyboard changed" + str(win32api.GetKeyboardLayout()))
+        print("Keyboard changed " + str(win32api.GetKeyboardLayout()) + " English, ssh")
 
 
 def setHook(WinEventProc, eventType):
